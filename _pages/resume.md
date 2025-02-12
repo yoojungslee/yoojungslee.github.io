@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "CV"
-permalink: /cv/
+title: "Resume"
+permalink: /resume/
 author_profile: true
 redirect_from:
   - /resume
@@ -17,13 +17,13 @@ redirect_from:
 **Role:** Nutritionist & Teacher  
 📍 *Seoul, South Korea* | 📅 *Mar 2019 - Feb 2024*  
 
-#### 🏅 MISCELLANEOUS  
+### 🏅 MISCELLANEOUS  
 
-##### - Awards 
+#### - Awards 
  : Superintendent of Education's Commendation For Excellence in Nutrition Education & School Lunch Program (2021, 2022)  
-##### - Volunteer Experience
+#### - Volunteer Experience
  : Designed the "Morning Health Classroom" Program For underprivileged obese children (2022, 2023)
-##### - Membership 
+#### - Membership 
  : Executive Officer Seoul Education Nutritionist Society (2020, 2021, 2022)
 
 ---
@@ -34,7 +34,8 @@ redirect_from:
 **Korean National Open University**  
 📍 *Seoul, South Korea* | 📅 *Mar 2023 - July 2025*  
 
-- 📚 Relevant Coursework: Calculus Ⅰ *(University of Pittsburgh)*, Calculus Ⅱ *(UC San Diego)*, Calculus Ⅲ *(UC San Diego)*  
+- 📚 Relevant Coursework
+: Calculus Ⅰ *(University of Pittsburgh)*, Calculus Ⅱ *(UC San Diego)*, Calculus Ⅲ *(UC San Diego)*  
 
 
 ### B.S. in Food and Nutrition & Teaching  
