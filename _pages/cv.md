@@ -9,39 +9,24 @@ redirect_from:
 
 ## 💼 PROFESSIONAL EXPERIENCES
 
-### 🏫 Seoul Jamsil Elementary School  
+### Seoul Jamsil Elementary School  
 **Role:** Nutritionist & Teacher  
 📍 *Seoul, South Korea* | 📅 *Mar 2024 - Present*  
 
----
-
-### 🏫 Seoul Godeok Elementary School  
+### Seoul Godeok Elementary School  
 **Role:** Nutritionist & Teacher  
 📍 *Seoul, South Korea* | 📅 *Mar 2019 - Feb 2024*  
 
----
+#### 🏅 MISCELLANEOUS  
 
-## 🏅 MISCELLANEOUS  
-
-### 🎖 Awards  
-- **Superintendent of Education's Commendation**  
-  *For Excellence in Nutrition Education & School Lunch Program*  
-  📅 *2021, 2022*  
-
----
-
-### 🤝 Volunteer Experience  
-- **Designed the "Morning Health Classroom" Program**  
-  *For underprivileged obese children*  
-  📅 *2022, 2023*  
+##### - Awards 
+ : Superintendent of Education's Commendation For Excellence in Nutrition Education & School Lunch Program (2021, 2022)  
+##### - Volunteer Experience
+ : Designed the "Morning Health Classroom" Program For underprivileged obese children (2022, 2023)
+##### - Membership 
+ : Executive Officer Seoul Education Nutritionist Society (2020, 2021, 2022)
 
 ---
-
-### 🏛 Membership  
-- **Executive Officer** – *Seoul Education Nutritionist Society*  
-  📅 *2020, 2021, 2022*  
-
-======
 
 ## 🎓 EDUCATION
 
@@ -49,10 +34,8 @@ redirect_from:
 **Korean National Open University**  
 📍 *Seoul, South Korea* | 📅 *Mar 2023 - July 2025*  
 
-**📚 Relevant Coursework:**  
-- Calculus Ⅰ *(University of Pittsburgh)*, Calculus Ⅱ *(UC San Diego)*, Calculus Ⅲ *(UC San Diego)*  
+- 📚 Relevant Coursework: Calculus Ⅰ *(University of Pittsburgh)*, Calculus Ⅱ *(UC San Diego)*, Calculus Ⅲ *(UC San Diego)*  
 
----
 
 ### B.S. in Food and Nutrition & Teaching  
 **Sungshin Women's University**  
@@ -63,30 +46,10 @@ redirect_from:
 - 🎖 *Full Scholarship Recipient (2014)*  
 - 🏆 *Grand Prize in Startup Competition (2016)*  
 
-**📚 Relevant Coursework:**  
-- Nutritional Biochemistry Ⅰ & Ⅱ  
-- Nutritional Physiology  
-- Clinical Nutrition  
-- Food Microbiology  
-
-======
+---
 
 ## 🛠 TECHNICAL SKILLS
 
-### 💻 Programming  
-- Python 🐍  
-- R 📊  
-
-### 🗄 Database  
-- SQL  
-- MySQL  
-- SQLite  
-
-### 📝 Version Control  
-- Git  
-- GitHub  
-
-### 📊 Data Visualization  
-- matplotlib  
-- seaborn  
-- ggplot2  
+| 💻 Programming | 🗄 Database  | 📝 Version Control | 📊 Data Visualization  | 
+|:---:|:---:|:---:|:---:|
+| Python, R |  MySQL, SQLite  | Git, GitHub | matplotlib, seaborn, ggplot2  |
