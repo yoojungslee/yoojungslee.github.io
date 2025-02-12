@@ -7,58 +7,86 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+## 💼 PROFESSIONAL EXPERIENCES
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+### 🏫 Seoul Jamsil Elementary School  
+**Role:** Nutritionist & Teacher  
+📍 *Seoul, South Korea* | 📅 *Mar 2024 - Present*  
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+---
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+### 🏫 Seoul Godeok Elementary School  
+**Role:** Nutritionist & Teacher  
+📍 *Seoul, South Korea* | 📅 *Mar 2019 - Feb 2024*  
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+---
 
-Publications
+## 🏅 MISCELLANEOUS  
+
+### 🎖 Awards  
+- **Superintendent of Education's Commendation**  
+  *For Excellence in Nutrition Education & School Lunch Program*  
+  📅 *2021, 2022*  
+
+---
+
+### 🤝 Volunteer Experience  
+- **Designed the "Morning Health Classroom" Program**  
+  *For underprivileged obese children*  
+  📅 *2022, 2023*  
+
+---
+
+### 🏛 Membership  
+- **Executive Officer** – *Seoul Education Nutritionist Society*  
+  📅 *2020, 2021, 2022*  
+
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
+
+## 🎓 EDUCATION
+
+### B.S. in Statistics and Data Science *(Minor: Computer Science)*  
+**Korean National Open University**  
+📍 *Seoul, South Korea* | 📅 *Mar 2023 - July 2025*  
+
+**📚 Relevant Coursework:**  
+- Calculus Ⅰ *(University of Pittsburgh)*, Calculus Ⅱ *(UC San Diego)*, Calculus Ⅲ *(UC San Diego)*  
+
+---
+
+### B.S. in Food and Nutrition & Teaching  
+**Sungshin Women's University**  
+📍 *Seoul, South Korea* | 📅 *Mar 2014 - Feb 2018*  
+
+**🏆 Honors & Awards:**  
+- 🎖 *Dean’s List with Distinction*  
+- 🎖 *Full Scholarship Recipient (2014)*  
+- 🏆 *Grand Prize in Startup Competition (2016)*  
+
+**📚 Relevant Coursework:**  
+- Nutritional Biochemistry Ⅰ & Ⅱ  
+- Nutritional Physiology  
+- Clinical Nutrition  
+- Food Microbiology  
+
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
+## 🛠 TECHNICAL SKILLS
+
+### 💻 Programming  
+- Python 🐍  
+- R 📊  
+
+### 🗄 Database  
+- SQL  
+- MySQL  
+- SQLite  
+
+### 📝 Version Control  
+- Git  
+- GitHub  
+
+### 📊 Data Visualization  
+- matplotlib  
+- seaborn  
+- ggplot2  
