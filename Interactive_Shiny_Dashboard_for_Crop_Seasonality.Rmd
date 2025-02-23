@@ -1,0 +1,127 @@
+---
+title: "Interactive_Shiny_Dashboard_for_Crop_Seasonality"
+author: "yoojungslee"
+date: "2024-06-23"
+output: html_document
+---
+
+```{r}
+install.packages("plotly")
+library(shiny)
+library(dplyr)
+library(ggplot2)
+library(plotly)
+library(DT)
+```
+
+# Prepare dataset
+```{r}
+crop_data <- data.frame(agriculture_data) %>%
+  rename(
+    Crop = Product.Name,
+    Start_Month = Production.Start.Month,
+    End_Month = Production.End.Month
+  )
+```
+
+# Shiny UI
+```{r}
+ui <- fluidPage(
+  titlePanel("Korean Crop Production Seasons"),
+  sidebarLayout(
+    sidebarPanel(
+      checkboxInput("show_all", "Show ALL", value = TRUE),
+      selectInput("crop", "Select Crops (Multiple Allowed):", 
+                  choices = crop_data$Crop,
+                  multiple = TRUE, 
+                  selected = crop_data$Crop[1:5]),
+      sliderInput("start_month", "Production Start Month Range:", 
+                  min = 1, max = 12, value = c(1, 12), step = 1),
+      sliderInput("end_month", "Production End Month Range:", 
+                  min = 1, max = 12, value = c(1, 12), step = 1),
+      checkboxGroupInput("season", "Select Seasons:", 
+                         choices = c("Spring (Mar-May)" = "spring", 
+                                     "Summer (Jun-Aug)" = "summer", 
+                                     "Fall (Sep-Nov)" = "fall", 
+                                     "Winter (Dec-Feb)" = "winter"),
+                         selected = c("spring", "summer", "fall", "winter"))
+    ),
+    mainPanel(
+      plotlyOutput("crop_plot", height = "600px"),
+      DTOutput("crop_table")
+    )
+  )
+)
+```
+
+# Shiny Server
+```{r}
+server <- function(input, output) {
+  # Define month ranges for each season
+  season_months <- list(
+    spring = 3:5,
+    summer = 6:8,
+    fall = 9:11,
+    winter = c(12, 1, 2)
+  )
+  
+  # Reactive data filtering
+  filtered_data <- reactive({
+    filtered <- crop_data
+    if (!input$show_all) {
+      filtered <- filtered %>%
+        filter(Crop %in% input$crop)
+    }
+    filtered <- filtered %>%
+      filter(Start_Month >= input$start_month[1], Start_Month <= input$start_month[2],
+             End_Month >= input$end_month[1], End_Month <= input$end_month[2])
+    
+    # Apply season filtering
+    if (!is.null(input$season) && length(input$season) > 0) {
+      filtered <- filtered %>%
+        filter(rowSums(sapply(input$season, function(s) {
+          months <- season_months[[s]]
+          sapply(1:nrow(filtered), function(i) {
+            start <- filtered$Start_Month[i]
+            end <- filtered$End_Month[i]
+            any(months >= start & months <= end) || 
+              (end < start && (any(months <= end) || any(months >= start)))
+          })
+        })) > 0)
+    }
+    
+    filtered %>% mutate(Crop = factor(Crop, levels = Crop))
+  })
+  
+  # Render visualization (tooltip disabled)
+  output$crop_plot <- renderPlotly({
+    filtered <- filtered_data()
+    if (nrow(filtered) == 0) {
+      return(plot_ly() %>% layout(title = "No Data Available"))
+    }
+    
+    p <- ggplot(filtered, aes(x = Start_Month, xend = End_Month, y = Crop, yend = Crop, color = Crop)) +
+      geom_segment(linewidth = 2) +
+      geom_point(aes(x = Start_Month), color = "green", size = 3) +
+      geom_point(aes(x = End_Month), color = "red", size = 3) +
+      labs(x = "Month", y = "Crop", title = "Crop Production Seasons") +
+      scale_x_continuous(breaks = 1:12, labels = month.abb) +
+      scale_color_viridis_d() +
+      theme_minimal() +
+      theme(axis.text.y = element_text(size = 10))
+    
+    ggplotly(p) %>%  # Remove tooltip: tooltip option removed
+      layout(hovermode = FALSE, showlegend = FALSE)  # Disable hover mode
+  })
+  
+  # Render table
+  output$crop_table <- renderDT({
+    datatable(filtered_data(), options = list(pageLength = 10, autoWidth = TRUE))
+  })
+}
+```
+
+# Run Shiny app
+```{r}
+shinyApp(ui = ui, server = server)
+```

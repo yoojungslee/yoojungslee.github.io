@@ -1,0 +1,106 @@
+---
+title: "Sugar_in_Student_Obesity"
+author: "yoojungslee"
+date: "2023-02-23"
+output: html_document
+---
+
+# (1) Correlation Analysis between Meal Evaluation Data and BMI Index
+```{r}
+# Install and load dplyr package
+install.packages("dplyr")
+library(dplyr)
+
+dat0 <- get("school_survey_data")
+head(dat0)
+```
+
+```{r}
+## Calculate BMI from student height and weight
+dat1 <- dat0 %>% mutate_at(vars(sex, regular, pace, volume, vege, fruit, milk, bean, meat, fish, psd_meat, psd_noodle, sw_snack, sw_drink, caf_drink, family, eatingout, exercise, post_sw_snack, post_sw_drink),
+                           as.factor) %>%
+  mutate(dat0, BMI = weight / height^2 * 10000)
+head(dat1)
+```
+
+```{r}
+## Scatter plot analysis between BMI and meal evaluation variables
+install.packages("ggplot2")
+library(ggplot2)
+
+a1 <- ggplot(dat1, aes(BMI, sw_snack)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+a2 <- ggplot(dat1, aes(BMI, sw_drink)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+a3 <- ggplot(dat1, aes(BMI, caf_drink)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+a4 <- ggplot(dat1, aes(BMI, psd_meat)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+a5 <- ggplot(dat1, aes(BMI, psd_noodle)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+a6 <- ggplot(dat1, aes(BMI, exercise)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+a7 <- ggplot(dat1, aes(BMI, vege)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+a8 <- ggplot(dat1, aes(BMI, eatingout)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+a9 <- ggplot(dat1, aes(BMI, family)) + geom_point(size=2, shape=18, color="red") + geom_smooth()
+
+# Install and load gridExtra package for arranging multiple plots
+install.packages("gridExtra")
+library(gridExtra)
+grid.arrange(grobs = list(a1, a2, a3, a4, a5, a6, a7, a8, a9), ncol=3, nrow=3)
+```
+
+```{r}
+## Correlation analysis for sweet snacks
+cor(dat1$BMI, dat1$sw_snack) # Pearson correlation coefficient: 0.5999897
+cor(dat1$BMI, dat1$sw_snack, method="spearman") # Spearman correlation coefficient: 0.5010112
+
+cor(dat1$BMI, dat1$sw_drink) # Pearson correlation coefficient: 0.6823028
+cor(dat1$BMI, dat1$sw_drink, method="spearman") # Spearman correlation coefficient: 0.7047425
+
+cor(dat1$BMI, dat1$exercise) # Pearson correlation coefficient: -0.498346
+cor(dat1$BMI, dat1$exercise, method="spearman") # Spearman correlation coefficient: -0.3795359
+
+cor(dat1) # Correlation matrix for all variables
+
+## Population mean estimation (point estimation, 95% confidence interval)
+t.test(dat1)  
+```
+
+## (2) Identify target grade level by checking BMI distribution by grade (boxplot)
+```{r}
+library(ggplot2)
+ggplot(dat1, aes(x=age, y=BMI, color=age)) + geom_boxplot() +
+  geom_jitter(shape=16, position=position_jitter(0.2)) +
+  facet_wrap(~age, scale="free")
+```
+
+## (3) Select high-risk students (BMI >= 23, overweight or obese)
+```{r}
+b1 <- subset(dat1, subset = BMI >= 23)
+head(b1, 20)
+```
+
+# (4) Word cloud visualization
+```{r}
+.libPaths()
+install.packages("wordcloud2",dependencies=TRUE)
+install.packages("Cairo")
+library(Cairo)
+install.packages("tm")
+library(wordcloud2)
+library(tm)
+
+stu_snack <- get("swt_snack")
+head(stu_snack)
+
+# Prepare data for word cloud
+frequency_snk <- table(stu_snack)
+snk_df <- as.data.frame(frequency_snk)
+colnames(snk_df) <- c("word", "frequency")
+
+# Generate word cloud
+wordcloud2(snk_df, size = 0.8, color = "random-light", backgroundColor = "black")
+```
+
+# (5) Compare pre/post-program sweet snack & sweet drink consumption (paired t-test)  
+```{r}
+## Hypothesis test: There is a significant difference.
+t.test(dat1$post_sw_snack, dat1$sw_snack, paired=TRUE)
+t.test(dat1$post_sw_drink, dat1$sw_drink, paired=TRUE)
+```
+
