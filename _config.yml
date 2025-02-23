@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Dive into Bioinformatics: Lee Yoo Jung"
+title                    : "[Dive into Bioinformatics]"
 title_separator          : "-"
 name                     : &name "Lee Yoo Jung"
 description              : &description "personal description"
