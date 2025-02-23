@@ -1,5 +1,5 @@
 ---
-title: "Automated Food Allergy Alert System"
+title: "Sugar Correlation in Student Obesity"
 excerpt: "This code analyzes meal evaluation data and BMI using R, calculating correlations, visualizing distributions with boxplots and word clouds, identifying high-risk students, and assessing program impact on snack/drink consumption with paired t-tests."
 collection: portfolio
 ---

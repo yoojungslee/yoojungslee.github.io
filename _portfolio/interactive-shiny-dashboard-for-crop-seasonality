@@ -1,5 +1,5 @@
 ---
-title: "Interactive_Shiny_Dashboard_for_Crop_Seasonality"
+title: "Interactive Shiny Dashboard for Crop Seasonality"
 excerpt: "This Shiny app visualizes Korean crop production seasons using interactive filters for crops, months, and seasons, displaying results with Plotly segments and a data table, built with R, dplyr, and ggplot2."
 collection: portfolio
 ---
