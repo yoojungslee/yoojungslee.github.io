@@ -38,8 +38,8 @@ redirect_from:
   - Elementary School Teaching Credential(Nutrition)- City of Seoul, Issued Feb 2019
   
 -  🏆 **Honors & Awards**  
-&nbsp;- *Dean’s List with Distinction*  
-&nbsp;- *Full Scholarship Recipient (2014)*  
+&nbsp;- *Dean’s List with Distinction & Full Scholarship Recipient (2014)*  
+&nbsp;- *Faculty-Mentored Undergraduate Scholarship(2015,2016,2017)*
 &nbsp;- *Grand Prize in Startup Competition (2016)*  
 
 ---
