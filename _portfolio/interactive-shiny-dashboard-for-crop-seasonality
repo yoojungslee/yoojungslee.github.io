@@ -17,5 +17,5 @@ Visualize and filter crop production seasons interactively.
 - Reactive data processing (Updates outputs dynamically; real-time user choices)
 
 # Output
- 1. Interactive Plotly chart and data table of crop seasons
- ![1i](/images/1i.png)
+1. Interactive Plotly chart and data table of crop seasons
+![1i](/images/1i.png)
