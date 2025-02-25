@@ -21,7 +21,7 @@ Now, I hope to explore biodata to decode metabolic & genetic influences on healt
 - Integrating nutrition, data, and biology to craft tailored health solutions using AI and digital tools. 
 
 ----
-### 🍎 AS a Nutrition Teacher & Nutirionist
+### 🍎 AS a Nutrition Teacher & Nutritionist
 
 1. Nutrition Planning Based on Student Health Data  
 &nbsp; - Designed meal plans and managed prep using nutrient data from 900 students.  
